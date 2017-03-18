@@ -51,14 +51,12 @@ else:
 
     edges.close()
 
-graph = sparse_graph.tocsr()
-
 
 def compute_solution():
-    source = d[str(e1.get())]
-    destination = d[str(e2.get())]
+    source = d[e1.get()]
+    destination = d[e2.get()]
 
-    distances, predecessors = dijkstra(graph, indices=source, return_predecessors=True)
+    distances, predecessors = dijkstra(sparse_graph, indices=source, return_predecessors=True)
 
     path = []
     node = destination
